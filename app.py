@@ -5,25 +5,7 @@ from fpdf import FPDF
 
 
 # ==== LOGIN HALAMAN PENUH ====
-if "login_success" not in st.session_state:
-    st.session_state.login_success = False
 
-if not st.session_state.login_success:
-    st.title("🔐 Login Anggota Karang Taruna")
-    akun_valid = {
-        "bina": "bhakti123",
-        "admin": "merdeka45"
-    }
-
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if username in akun_valid and akun_valid[username] == password:
-            st.success("Login berhasil")
-            st.session_state.login_success = True
-        else:
-            st.error("Username atau password salah")
-    st.stop()
 
 
 DATA_FILE = "data_lomba.json"
